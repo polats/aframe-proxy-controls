@@ -6,7 +6,7 @@
   "config": {
     "demo_host": "localhost",
     "demo_port": 8000,
-    "proxy_url": "https://proxy-controls.donmccurdy.com"
+    "proxy_url": "http://localhost:3000"
   },
   "scripts": {
     "dev": "budo browser.js:bundle.js --dir examples --host $npm_package_config_demo_host --port $npm_package_config_demo_port --live -- -t envify",
@@ -43,7 +43,6 @@
     "whatwg-fetch": "^0.11.0"
   },
   "devDependencies": {
-    "aframe-core": "*",
     "browserify": "^12.0.1",
     "browserify-css": "^0.8.3",
     "budo": "^7.1.0",

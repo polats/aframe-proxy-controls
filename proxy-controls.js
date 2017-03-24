@@ -4,7 +4,7 @@ require('whatwg-fetch');
 var SocketPeer = require('socketpeer'),
     Overlay = require('./lib/overlay');
 
-var PROXY_URL = 'https://proxy-controls.donmccurdy.com';
+var PROXY_URL = 'http://localhost:3000';
 if (typeof process !== 'undefined') {
   PROXY_URL = process.env.npm_package_config_proxy_url || PROXY_URL;
 }
@@ -168,6 +168,16 @@ module.exports = {
    */
   getKeyboard: function () {
     return this.state.keyboard || {};
+  },
+
+  /**
+   * Returns an object representing remote phone state, containing
+   * orientation data (alpha, beta, gamma) and touch / gesture states.
+   *
+   * @return {Object}
+   */
+  getRemotePhoneState: function () {
+    return this.state.remotephone;
   },
 
   /**
